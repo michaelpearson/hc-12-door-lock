@@ -5,13 +5,6 @@ SERVER_TARGET  ?= bin/server.ihx
 CLIENT_TARGET  ?= bin/client.ihx
 
 LIBRARY_SRCS := $(wildcard lib/*.c)
-# LIBRARY_SRCS  = lib/clock.c
-# LIBRARY_SRCS += lib/eeprom.c
-# LIBRARY_SRCS += lib/radio.c
-# LIBRARY_SRCS += lib/sha-256.c
-# LIBRARY_SRCS += lib/spi.c
-# LIBRARY_SRCS += lib/uart.c
-# LIBRARY_SRCS += lib/util.c
 
 SERVER_OBJS   = $(patsubst %, bin/%, $(LIBRARY_SRCS:.c=.rel)) bin/src/server.rel
 CLIENT_OBJS   = $(patsubst %, bin/%, $(LIBRARY_SRCS:.c=.rel)) bin/src/client.rel
